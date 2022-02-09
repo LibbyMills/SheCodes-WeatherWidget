@@ -1,3 +1,63 @@
-h1 {
-  color: aqua;
+body {
+  background-color: #f7f2ef;
+  font-family: "Roboto Slab", serif;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+ul {
+  list-style: none;
+  font-size: 16px;
+}
+.card-css {
+  margin: 0 auto;
+  margin-top: 30px;
+  border-radius: 30px;
+  background-color: #f3e9de;
+  max-width: 1000px;
+}
+.search-bar {
+  margin: 10px;
+}
+
+.details {
+  font-size: 12px;
+}
+
+.units {
+  position: relative;
+  top: -12px;
+}
+.units:hover {
+  text-decoration: underline;
+}
+
+.today-emoji {
+  font-size: 100px;
+  padding: 20px;
+}
+.today-temp {
+  font-size: 28px;
+}
+.vertical {
+  border-left: 2px solid black;
+  height: 130px;
+  position: absolute;
+  left: 30%;
+}
+.title {
+  font-size: 28px;
+  font-weight: 400;
+}
+.sentence {
+  font-size: 28px;
+  font-weight: 100;
+}
+.day {
+  font-size: 24px;
+  font-weight: 400;
+}
+.higher {
+  font-weight: 700;
 }

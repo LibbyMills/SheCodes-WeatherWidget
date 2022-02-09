@@ -3,17 +3,134 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=>, initial-scale=1.0" />
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Widget</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/d99447481f.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Hello Git</h1>
-    <form>
-      <input type="text" placeholder="enter your email" />
-      <input type="password" placeholder="enter your password" />
-      <input type="submit" value="Login"
-    </form>
+    <div class="container">
+      <div class="card card-css">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-10">
+              <form class="search-bar" id="search-bar">
+                <input
+                  type="search"
+                  id="cityInput"
+                  class="form-control"
+                  placeholder="Where would you like to check the forecast for?"
+                  autocomplete="off"
+                />
+              </form>
+            </div>
+          </div>
+          <span class="title">Today</span>
+          <span> <p class="details" id="the-dtg">Day Time</p></span>
+          <div class="row">
+            <div class="col-2">
+              <h1 class="today-emoji">🌞</h1>
+            </div>
+            <div class="col-2">
+              <span class="higher today-temp" id="todayHigh">...</span>
+              <span class="details units" id="units">˚C</span>
+              <div class="row">
+                <div class="col-4 today-temp" id="todayLow">...</div>
+              </div>
+            </div>
+            <div class="vertical"></div>
+            <div class="col-6">
+              <span class="sentence" id="conditions"></span>
+              <span class="sentence" id="sentence">
+                Lets check out your forecast!</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-3">
+              <span class="day">Tomorrow</span>
+              <div class="row">
+                <div class="col-2">
+                  <h1>⛅️</h1>
+                </div>
+                <div class="col-4">
+                  <ul>
+                    <li>
+                      <span class="higher">10˚</span>
+                    </li>
+                    <li>3˚</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <span class="day">Friday</span>
+              <div class="row">
+                <div class="col-2">
+                  <h1>🌨</h1>
+                </div>
+                <div class="col-4">
+                  <ul>
+                    <li>
+                      <span class="higher">17˚</span>
+                    </li>
+                    <li>8˚</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <span class="day">Saturday</span>
+              <div class="row">
+                <div class="col-2">
+                  <h1>🌦</h1>
+                </div>
+                <div class="col-4">
+                  <ul>
+                    <li>
+                      <span class="higher">15˚</span>
+                    </li>
+                    <li>9˚</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <span class="day">Sunday</span>
+              <div class="row">
+                <div class="col-2">
+                  <h1>❄️</h1>
+                </div>
+                <div class="col-4">
+                  <ul>
+                    <li>
+                      <span class="higher">19˚</span>
+                    </li>
+                    <li>11˚</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js.js"></script>
   </body>
 </html>
