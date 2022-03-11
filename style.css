@@ -61,3 +61,7 @@ ul {
 .higher {
   font-weight: 700;
 }
+
+.btn {
+  margin: 10px;
+}

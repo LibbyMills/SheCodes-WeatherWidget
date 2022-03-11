@@ -23,12 +23,19 @@ function getDate(date) {
 function searchCity(event) {
   event.preventDefault();
   let chosenCity = document.querySelector("#cityInput");
-  sentence.innerHTML = ` in <em> ${chosenCity.value}  </em> today, and over the next few days...`;
   let wxUrl = `https://api.openweathermap.org/data/2.5/weather?q=${chosenCity.value}&units=metric&appid=bd3ff741f58b13df62ca6260d9e2d474`;
-  axios.get(wxUrl).then(showTemperature);
+  axios.get(wxUrl).then(showWx);
 }
 
-function showTemperature(response) {
+function searchLocation(position) {
+  let apiURL = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&appid=bd3ff741f58b13df62ca6260d9e2d474`;
+  axios.get(apiURL).then(showWx);
+  console.log(apiURL);
+}
+
+function showWx(response) {
+  let cityResponse = response.data.name;
+  sentence.innerHTML = ` in <em> ${cityResponse}  </em> today, and over the next few days...`;
   let high = document.querySelector("#todayHigh");
   let low = document.querySelector("#todayLow");
   let wxCondition = document.querySelector("#conditions");
@@ -41,9 +48,17 @@ function showTemperature(response) {
   wxCondition.innerHTML = `${wxDescription}`;
 }
 
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchLocation);
+}
+
 let dtg = document.querySelector("#the-dtg");
 let now = new Date();
 let searchButton = document.querySelector("#search-bar");
+
+let currentLocationButton = document.querySelector("#current-location");
+currentLocationButton.addEventListener("click", getCurrentLocation);
 
 dtg.innerHTML = getDate(now);
 searchButton.addEventListener("submit", searchCity);
